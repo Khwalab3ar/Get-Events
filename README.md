@@ -30,7 +30,7 @@
 
 ## _ERD_
 
-### [ERD](/IMAGE/get_events_erd.png)
+### ![Image](/IMAGE/get_events_erd.png)
 
 ---
 
