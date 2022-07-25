@@ -28,11 +28,15 @@
 
 ---
 
-## _ERD_
+## _Entitiy Relationship Diagram_
 
 ### ![Image](/IMAGE/get_events_erd.png)
 
 ---
+
+## _Component Hierarchy Diagram_
+
+### [Get Event CHD](https://lucid.app/lucidchart/c256ff15-4185-49c6-93df-2b06a4263324/edit?invitationId=inv_00f67dff-5d1f-492e-8597-1fb07fb9bc13&page=0_0#)
 
 ## _Trello Board_
 
