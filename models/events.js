@@ -7,7 +7,7 @@ const Event = new Schema(
     industry: { type: String, required: false },
     type: { type: String, required: true },
     price: { type: Number, required: true },
-    date: { type: Date, required: true },
+    date: { type: String, required: true },
     organization: {
       type: Schema.Types.ObjectId,
       ref: 'Organization',

@@ -10,6 +10,16 @@ const getAllEvents = async (req, res) => {
   }
 }
 
+const createEvent = async (req, res) => {
+  try {
+    const newEvent = await new Event(req.body)
+    await newEvent.save()
+    return res.status(200).json(newEvent)
+  } catch (e) {
+    res.status(500).send(e.message)
+  }
+}
+
 const searchEvents = async (req, res) => {
   try {
     const events = await Event.find(req.body)
@@ -59,6 +69,7 @@ const deleteEvent = async (req, res) => {
 
 module.exports = {
   getAllEvents,
+  createEvent,
   searchEvents,
   updateEvent,
   deleteEvent
