@@ -1,4 +1,4 @@
-const Personal = require('../models/personal')
+const Personal = require('../models/personals')
 
 const getAllPersonals = async (req, res) => {
   try {

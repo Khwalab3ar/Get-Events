@@ -9,4 +9,4 @@ const Organization = new Schema(
   { timestamps: true }
 )
 
-module.exports = mongoose.model('organization', Organization)
+module.exports = mongoose.model('organizations', Organization)

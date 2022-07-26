@@ -1,11 +1,11 @@
-const Event = require('./models/event')
+const Event = require('../models/events')
 
 const getAllEvents = async (req, res) => {
   try {
     const allEvents = await Event.find()
-    res.status(200).json(allEvents)
+    return res.status(200).json(allEvents)
   } catch (e) {
-    res.status(500).send(e.message)
+    return res.status(500).send(e.message)
   }
 }
 

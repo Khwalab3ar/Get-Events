@@ -6,11 +6,15 @@ const Event = new Schema(
     name: { type: String, required: true },
     industry: { type: String, required: false },
     type: { type: String, required: true },
-    price: { type: String, required: true },
+    price: { type: Number, required: true },
     date: { type: Date, required: true },
-    organization: { type: Schema.Types.ObjectId, ref: 'Organization' }
+    organization: {
+      type: Schema.Types.ObjectId,
+      ref: 'Organization',
+      required: false
+    }
   },
   { timeseries: true }
 )
 
-module.exports = mongoose.model('event', Event)
+module.exports = mongoose.model('events', Event)
