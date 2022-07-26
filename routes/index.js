@@ -21,9 +21,10 @@ router.get('/event/search', eventController.searchEvents)
 router.put('/event/:id', eventController.updateEvent)
 router.delete('/event/:id', eventController.deleteEvent)
 //Controllers for Personals
-/*router.get('/personals', personalController.getAllPersonals)
+router.get('/personals', personalController.getAllPersonals)
+router.post('/personal', personalController.createPersonal)
 router.get('/personal/search', personalController.searchPersonals)
 router.put('/personal/:id', personalController.updatePersonal)
-router.delete('/personal/:id', personalController.deletePersonal)*/
+router.delete('/personal/:id', personalController.deletePersonal)
 
 module.exports = router

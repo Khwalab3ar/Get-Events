@@ -38,7 +38,7 @@ const updateOrg = async (req, res) => {
       id,
       req.body,
       { new: true },
-      (err, events) => {
+      (err, org) => {
         if (err) {
           res.status(500).send(err)
         }
