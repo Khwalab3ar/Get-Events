@@ -14,12 +14,13 @@ const searchEvents = async (req, res) => {
   try {
     const events = await Event.find(req.body)
     if (events) {
-      return res.status(200).json({ events })
+      return res.status(200).json(events)
     }
     return res.status(404).send('No events were found.')
   } catch (e) {
     return res.status(500).send(e.message)
   }
+  res.send('hello')
 }
 
 const updateEvent = async (req, res) => {
@@ -57,5 +58,8 @@ const deleteEvent = async (req, res) => {
 }
 
 module.exports = {
-  getAllEvents
+  getAllEvents,
+  searchEvents,
+  updateEvent,
+  deleteEvent
 }
