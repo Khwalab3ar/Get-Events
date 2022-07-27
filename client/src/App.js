@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import About from './pages/About'
 import Success from './pages/Success'
+import Error from './pages/Error'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" element={<About />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/success" element={<Success />}></Route>
+          <Route path="/error" element={<Error />}></Route>
         </Routes>
       </main>
     </div>

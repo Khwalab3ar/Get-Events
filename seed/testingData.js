@@ -1,5 +1,5 @@
 const db = require('../db')
-const {Event, Personal, Organization} = require('../models/index')
+const { Event, Personal, Organization } = require('../models/index')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error : '))
 
@@ -18,7 +18,8 @@ const main = async () => {
   const org = [
     {
       name: 'Terror Finder',
-      industry: 'Entertainment'
+      industry: 'Entertainment',
+      email: 'terrorfinder@test.com'
     }
   ]
   await Organization.insertMany(org)

@@ -1,9 +1,23 @@
 import CreateAccount from '../components/CreateAccount'
 import UserLogin from '../components/UserLogin'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { BASE_URL } from '../globals'
 
 const Login = () => {
   const [newUser, toggleNewUser] = useState(false)
+  const [users, setUsers] = useState([])
+  const [typeOf, setTypeOf] = useState('')
+  useEffect(() => {
+    const getAllPersonals = async () => {
+      const res = await axios.get(`${BASE_URL}/personals`)
+      setUsers(res.data)
+    }
+    const getAllOrgs = async () => {
+      const res = await axios.get(`${BASE_URL}/organizations`)
+      setUsers(res.data)
+    }
+  }, [])
   let form
   const handleSignUp = () => {
     toggleNewUser(true)
