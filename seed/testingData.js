@@ -1,7 +1,5 @@
 const db = require('../db')
-const Event = require('../models/events')
-const Organization = require('../models/organization')
-const Personal = require('../models/personal')
+const {Event, Personal, Organization} = require('../models/index')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error : '))
 
