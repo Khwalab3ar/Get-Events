@@ -24,23 +24,14 @@ const UserLogin = (props) =>{
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    let urlEnd = ''
-    if(accType ==='personal'){
-      urlEnd = 'personals'
-    }else{
-      urlEnd = 'organizations'
-    }
     const getAll = async () =>{
-      const res = await axios.get(`${BASE_URL}${urlEnd}`)
+      const res = await axios.get(`${BASE_URL}${accType}`)
       setAcc(res.data)
-      console.log(res.data)
     }
     getAll()
     found = acc.find(e => e.email === userEmail)
-    console.log(found)
     if(found){
-      console.log('id: ',found._id)
-      navigate(`/${found._id}`,{state:{found}})
+      navigate(`/${accType}/${found._id}`,{state:{found}})
     }else{
       setErrMessage('You do not have an account.')
     }
@@ -51,8 +42,8 @@ const UserLogin = (props) =>{
     <div className="login-form">
       <form onSubmit={handleSubmit}>
       <fieldset>
-        <input className="type-of" type='radio' id='personal' name='type' value='personal' onChange={handleChange}/><label htmlFor='personal'>Individual</label>
-        <input className="type-of" type='radio' id='org' name='type' value='org'onChange={handleChange}/> <label htmlFor='org'>Organization</label>
+        <input className="type-of" type='radio' id='personal' name='type' value='personals' onChange={handleChange}/><label htmlFor='personal'>Individual</label>
+        <input className="type-of" type='radio' id='org' name='type' value='organizations'onChange={handleChange}/> <label htmlFor='org'>Organization</label>
       </fieldset>
         <label htmlFor='email'>Email: </label>
         <input type="email" id="email" name="email" onChange={handleEmailchange} required/>
