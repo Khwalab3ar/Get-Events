@@ -4,7 +4,6 @@ import Edit from '../components/Edit'
 
 const OrgHome = () => {
   const location = useLocation()
-  console.log(location)
   const userData = location.state.found
   const [editDets, setEditDets] = useState(false)
   let form

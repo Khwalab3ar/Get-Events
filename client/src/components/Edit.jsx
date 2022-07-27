@@ -1,7 +1,28 @@
+import axios from "axios"
+import { BASE_URL } from "../globals"
+
 const Edit = (props) =>{
   const handleSubmit = (e) => {
     e.preventDefault()
-
+    const json = {}
+    if(document.querySelector('#orgName').value){
+      json.name = document.querySelector('#orgName').value
+    }
+    if(document.querySelector('#industry').value){
+      json.industry = document.querySelector('#industry').value
+    }
+    if(document.querySelector('#phone').value){
+      json.phone = document.querySelector('#phone').value
+    }
+    if(document.querySelector('#email').value){
+      json.email = document.querySelector('#email').value
+    }
+    console.log(json)
+    const updateOrg = async () =>{
+      const res = await axios.put(`${BASE_URL}organization/${props.id}`,json)
+      console.log(res)
+    }
+    updateOrg()
   }
   return(
     <div>
