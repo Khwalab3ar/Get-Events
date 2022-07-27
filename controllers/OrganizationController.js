@@ -1,4 +1,4 @@
-const Organization = require('../models/organizations')
+const { Organization } = require('../models/index')
 
 const getAllOrgs = async (req, res) => {
   try {

@@ -1,5 +1,4 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const { Schema } = require('mongoose')
 
 const Personal = new Schema(
   {
@@ -8,7 +7,7 @@ const Personal = new Schema(
     phone: { type: String, required: false },
     email: { type: String, required: true },
     organization: {
-      type: Schema.Types.ObjectsId,
+      type: Schema.Types.ObjectId,
       ref: 'Organization',
       required: false
     },
@@ -17,4 +16,4 @@ const Personal = new Schema(
   { timestamps: true }
 )
 
-module.exports = mongoose.model('personals', Personal)
+module.exports = Personal

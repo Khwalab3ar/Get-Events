@@ -1,5 +1,4 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const { Schema } = require('mongoose')
 
 const Event = new Schema(
   {
@@ -17,4 +16,4 @@ const Event = new Schema(
   { timeseries: true }
 )
 
-module.exports = mongoose.model('events', Event)
+module.exports = Event
