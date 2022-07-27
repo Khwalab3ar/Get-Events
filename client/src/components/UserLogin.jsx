@@ -9,6 +9,7 @@ const UserLogin = (props) =>{
   const[accType,setAccType]= useState('')
   const[verified,toggleVerified] = useState(false)
   const[errMessage,setErrMessage] = useState('')
+  const[userEmail,setUserEmail] = useState('')
   const navigate = useNavigate()
   let found
 
@@ -17,8 +18,11 @@ const UserLogin = (props) =>{
     setAccType(a)
   } 
 
+  const handleEmailchange = (e)=>{
+    setUserEmail(e.currentTarget.value)
+  }
+
   const handleSubmit = (e) =>{
-    const userEmail = document.querySelector('#email').value
     e.preventDefault()
     let urlEnd = ''
     if(accType ==='personal'){
@@ -36,7 +40,7 @@ const UserLogin = (props) =>{
     console.log(found)
     if(found){
       console.log('id: ',found._id)
-      navigate(`/${found._id}`)
+      navigate(`/${found._id}`,{state:{found}})
     }else{
       setErrMessage('You do not have an account.')
     }
@@ -51,7 +55,7 @@ const UserLogin = (props) =>{
         <input className="type-of" type='radio' id='org' name='type' value='org'onChange={handleChange}/> <label htmlFor='org'>Organization</label>
       </fieldset>
         <label htmlFor='email'>Email: </label>
-        <input type="email" id="email" name="email" required/>
+        <input type="email" id="email" name="email" onChange={handleEmailchange} required/>
         <label htmlFor='password'>Password: </label>
         <input type='text' id='password' name='password' placeholder="future release"/>
         <button type="Submit"> Login</button>
