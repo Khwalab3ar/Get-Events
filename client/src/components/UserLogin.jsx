@@ -5,7 +5,7 @@ import { BASE_URL } from "../globals"
 
 
 const UserLogin = (props) =>{
-  const[acc, setAcc]= useState([])
+  const[acc, setAcc]= useState()
   const[accType,setAccType]= useState('')
   const[verified,toggleVerified] = useState(false)
   const[errMessage,setErrMessage] = useState('')
@@ -29,14 +29,17 @@ const UserLogin = (props) =>{
       setAcc(res.data)
     }
     getAll()
-    found = acc.find(e => e.email === userEmail)
-    if(found){
-      navigate(`/${accType}/${found._id}`,{state:{found}})
-    }else{
-      setErrMessage('You do not have an account.')
+    // find a different location , acc takes a bit to render, might use useEffect?
+    if(acc){
+      console.log('wtf',acc)
+      found = acc.find(e => e.email === userEmail)
+      if(found){
+        navigate(`/${accType}/${found._id}`,{state:{found}})
+      }else{
+        setErrMessage('You do not have an account.')
+      }
     }
   }
-  console.log(errMessage)
 
   return(
     <div className="login-form">
