@@ -41,10 +41,11 @@ const UserLogin = (props) =>{
 
   return(
     <div className="login-form">
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
       <fieldset>
-        <input className="type-of" type='radio' id='personal' name='type' value='personals' onChange={handleChange}/><label htmlFor='personal'>Individual</label>
-        <input className="type-of" type='radio' id='org' name='type' value='organizations'onChange={handleChange}/> <label htmlFor='org'>Organization</label>
+        <input className="type-of" type='radio' id='personal' name='type' value='personals' onChange={handleChange}/><label className="types" htmlFor='personal'>Individual</label>
+        <input className="type-of" type='radio' id='org' name='type' value='organizations'onChange={handleChange}/> <label className="types" htmlFor='org'>Organization</label>
       </fieldset>
         <label htmlFor='email'>Email: </label>
         <input type="email" id="email" name="email" onChange={handleEmailchange} required/>

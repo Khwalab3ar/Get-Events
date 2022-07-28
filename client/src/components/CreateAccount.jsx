@@ -75,8 +75,8 @@ const CreateAccount = (props) =>{
   <h1>Sign up</h1>
 <form onSubmit={handleSubmit}>
   <fieldset>
-  <input className="type-of" type='radio' id='personal' name='type' value='personal' onChange={handleChange}/><label htmlFor='personal'>Individual</label>
-  <input className="type-of" type='radio' id='org' name='type' value='org'onChange={handleChange}/> <label htmlFor='org'>Organization</label>
+  <input className="type-of" type='radio' id='personal' name='type' value='personal' onChange={handleChange}/><label className="types" htmlFor='personal'>Individual</label>
+  <input className="type-of" type='radio' id='org' name='type' value='org'onChange={handleChange}/> <label className="types" htmlFor='org'>Organization</label>
 </fieldset>
 </form>
 {formType}

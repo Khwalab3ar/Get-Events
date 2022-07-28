@@ -15,7 +15,6 @@ const Event = (props) =>{
       setEvents(res.data) 
       console.log(res)
     }
-    console.log(props.id)
     if(props.id === undefined){
       getAllEvent()
     }else{ 
