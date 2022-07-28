@@ -32,7 +32,7 @@ const OrgHome = () => {
     form = <Edit id={userData._id} finish={handleClick} />
   }
   if (eventDet) {
-    form = <CreateEvent id={userData._id} finish={handleClick} />
+    form = <CreateEvent orgData={userData} finish={handleClick} />
   }
   return (
     <div className="org-home-page">

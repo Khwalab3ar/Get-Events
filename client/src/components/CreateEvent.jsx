@@ -8,20 +8,20 @@ const navigate = useNavigate()
 const [created, toggleCreated] = useState(false)
 
   const handleSubmit = (e) =>{
+    console.log('data', props.orgData)
     e.preventDefault()
     const name = document.querySelector('#eventName').value
-    const industry = document.querySelector('#industry').value
     const  type= document.querySelector('#type').value
     const price = document.querySelector('#price').value
     const date = document.querySelector('#date').value
     const image = document.querySelector('#image').value
     const json = {
       name: name,
-      industry: industry,
+      industry: props.orgData.industry,
       type: type,
       price: price,
       date: date,
-      organization: props.id,
+      organization: props.orgData._id,
       image: image
     }
 
@@ -29,7 +29,7 @@ const [created, toggleCreated] = useState(false)
     const createEvent = async ()=>{
       const res  = await axios.post(`${BASE_URL}/event`, json)
       toggleCreated(true)
-      console.log('create')
+      console.log(created)
     }
     createEvent()
     if(created){ props.finish()}
@@ -43,8 +43,6 @@ const [created, toggleCreated] = useState(false)
       <form onSubmit={handleSubmit}>
       <label htmlFor='eventName'>Event Name: </label>
       <input type='text' id="eventName" name='orgName'/>
-      <label htmlFor='industry'>Industry:  </label>
-      <input type='text' id="industry" name='industry'/>
       <label htmlFor='type'>Type: </label>
       <input type="text" id="type" name="type"/>
       <label htmlFor='price'>Price: </label>
