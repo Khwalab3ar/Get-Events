@@ -18,15 +18,19 @@ const Event = (props) =>{
     (props.id)? searchEvent(): getAllEvent()
   },[])
   return(
+  <section>
+          <h1>EVENTS</h1>
     <div className="events-grid">
       {events.map((event)=>(
-        <div key={event._id}>
+        <div className='event-items' key={event._id}>
+          <img src={event.image}/>
           <h1>{event.name}</h1>
           <h3>Industry: {event.industy}</h3>
           <h3>Price: <span className="price">${event.price}</span></h3>
       </div>
       ))}
     </div>
+    </section>
   )
 }
 

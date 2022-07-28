@@ -12,7 +12,7 @@ import OrgHome from './pages/OrgHome'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         <Nav />
       </header>
       <main>

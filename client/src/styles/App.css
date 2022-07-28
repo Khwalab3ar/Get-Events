@@ -1,8 +1,48 @@
+*{
+  color: #fff;
+  margin:0;
+}
+body{
+  background-color: #243080;
+}
+header{
+  background-color: #216362;
+  height: 10%;
+  width:100%
+}
+section{
+  margin-top:3%;
+}
+section > h1{
+  font-size: 2em;
+}
+ul{
+  display: flex;
+  justify-content: end;
+}
+li{
+  list-style-type: none;
+  padding: 2% 3%;
+  font-size: 1.25em;
+}
+li:last-of-type{
+  padding-right: 5%;
+}
+li:hover{
+  background-color: #228866;
+}
+a{text-decoration: none;}
+
 .App {
   text-align: center;
 }
 
-.App-header {
-  background-color: rgb(175, 175, 255);
+.events-grid{
+  margin: 4% 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap:15px;
 }
-
+.event-items{
+  border: 2px solid #fff;
+}
