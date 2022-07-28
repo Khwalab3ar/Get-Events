@@ -34,19 +34,10 @@ const searchOrgs = async (req, res) => {
 const updateOrg = async (req, res) => {
   try {
     const { id } = req.params
-    const org = await Organization.findByIdAndUpdate(
-      id,
-      req.body,
-      { new: true },
-      (err, org) => {
-        if (err) {
-          res.status(500).send(err)
-        }
-        if (!org) {
-          res.status(500).send('Organization was not found')
-        }
-      }
-    )
+    const org = await Organization.findByIdAndUpdate(id, req.body, {
+      new: true
+    })
+    return res.status(200).json(org)
   } catch (e) {
     return res.status(500).send(e.message)
   }

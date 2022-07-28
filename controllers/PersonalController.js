@@ -34,19 +34,10 @@ const searchPersonals = async (req, res) => {
 const updatePersonal = async (req, res) => {
   try {
     const { id } = req.params
-    const person = await Personal(
-      id,
-      req.body,
-      { new: true },
-      (err, person) => {
-        if (err) {
-          res.status(500).send(err)
-        }
-        if (!person) {
-          res.status(500).send('Personal was not found')
-        }
-      }
-    )
+    const org = await Personal.findByIdAndUpdate(id, req.body, {
+      new: true
+    })
+    return res.status(200).json(org)
   } catch (e) {
     return res.status(500).send(e.message)
   }
