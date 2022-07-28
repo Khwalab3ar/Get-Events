@@ -1,10 +1,13 @@
 import { useState,useEffect } from "react"
 import axios from 'axios'
 import { BASE_URL } from "../globals"
+import {useNavigate} from "react-router-dom"
 
 
 const Event = (props) =>{
+  const navigate = useNavigate()
   const[events,setEvents]= useState([])
+  const[isDelete, setIsDelete] = useState(false)
   useEffect(()=>{
     const getAllEvent = async () =>{
       const res = await axios.get(`${BASE_URL}events`) 
@@ -13,13 +16,26 @@ const Event = (props) =>{
     const searchEvent =  async () =>{
       const res = await axios.get(`${BASE_URL}event/search/${props.id}`)
       setEvents(res.data) 
-      console.log(res)
     }
     if(props.id === undefined){
       getAllEvent()
     }else{ 
-      searchEvent()}
-  },[])
+      searchEvent()
+    }
+  },[isDelete])
+
+    const handleClick=(event)=>{
+      navigate('/eventDetails', {state:{event}})
+    }
+
+    const handleDelete = (id)=>{
+      let confirm = prompt('Enter "Yes" to delete')
+      const deleteEvent = async () => {
+        const deleted = await axios.delete(`${BASE_URL}event/${id}`)
+      }
+      (confirm === "Yes")&& deleteEvent()
+      setIsDelete(true)
+    }
   return(
     <div className="events-grid">
       {events.map((event)=>(
@@ -28,7 +44,8 @@ const Event = (props) =>{
           <h1>{event.name}</h1>
           <h3>Industry: {event.industry}</h3>
           <h3>Price: <span className="price">${event.price}</span></h3>
-          {/*<h4>org: {event.organization}</h4>*/}
+          <button onClick={()=>handleClick(event)}>Details</button>
+          {(props.id != undefined)&&<button onClick={()=>handleDelete(event._id)}>Delete</button>}
       </div>
       ))}
     </div>

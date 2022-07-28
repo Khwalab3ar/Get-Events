@@ -30,25 +30,12 @@ const searchEvents = async (req, res) => {
   } catch (e) {
     return res.status(500).send(e.message)
   }
-  res.send('hello')
 }
 
 const updateEvent = async (req, res) => {
   try {
     const { id } = req.params
-    const event = await Event.findByIdAndUpdate(
-      id,
-      req.body,
-      { new: true },
-      (err, event) => {
-        if (err) {
-          res.status(500).send(err)
-        }
-        if (!event) {
-          res.status(500).send('Event was not found')
-        }
-      }
-    )
+    const event = await Event.findByIdAndUpdate(id, req.body, { new: true })
   } catch (e) {
     return res.status(500).send(e.message)
   }

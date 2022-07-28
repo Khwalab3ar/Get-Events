@@ -8,6 +8,7 @@ import Success from './pages/Success'
 import Error from './pages/Error'
 import UserHome from './pages/UserHome'
 import OrgHome from './pages/OrgHome'
+import EventDetails from './pages/EventDetails'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/error" element={<Error />}></Route>
           <Route path="/personals/:id" element={<UserHome />}></Route>
           <Route path="/organizations/:id" element={<OrgHome />}></Route>
+          <Route path="/eventDetails" element={<EventDetails />}></Route>
         </Routes>
       </main>
     </div>

@@ -21,11 +21,12 @@ const createOrg = async (req, res) => {
 
 const searchOrgs = async (req, res) => {
   try {
-    const orgs = await Organization.find(req.body)
-    if (orgs) {
-      return res.status(200).json(orgs)
+    const { id } = req.params
+    const org = await Organization.findById(id)
+    if (org) {
+      return res.status(200).json(org)
     }
-    return res.status(404).send('No organizations were found')
+    return res.status(404).send('No organization was found.')
   } catch (e) {
     return res.status(500).send(e.message)
   }

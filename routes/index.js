@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 //Controllers for organizations
 router.get('/organizations', orgController.getAllOrgs)
 router.post('/organization', orgController.createOrg)
-router.get('/organizations/search', orgController.searchOrgs)
+router.get('/organization/search/:id', orgController.searchOrgs)
 router.put('/organization/:id', orgController.updateOrg)
 router.delete('/organization/:id', orgController.deleteOrg)
 //Controllers for Events
