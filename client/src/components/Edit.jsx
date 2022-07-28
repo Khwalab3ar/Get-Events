@@ -32,7 +32,9 @@ const Edit = (props) =>{
     }
 
   }
-
+  const handleCancel = () =>{
+    props.finish()
+  }
   const handleDelete =() =>{
     let wantDelete  = prompt('Enter "Yes" to delete')
     if (wantDelete === "Yes"){
@@ -55,6 +57,7 @@ const Edit = (props) =>{
       <label htmlFor='email'>Email: </label>
       <input type='email' id='email' name='email'/>
       <button type='Submit'>Save</button>
+      <button onClick={handleCancel}>Cancel</button>
     </form>
     <button onClick={handleDelete}>Delete</button>
     </div>

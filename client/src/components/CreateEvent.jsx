@@ -34,6 +34,10 @@ const [created, toggleCreated] = useState(false)
     createEvent()
     if(created){ props.finish()}
     }
+
+    const handleCancel = () =>{
+      props.finish()
+    }
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -50,6 +54,7 @@ const [created, toggleCreated] = useState(false)
       <label htmlFor='image'>Image Url: </label>
       <input type='text' id='image' name='image'/>
       <button type='Submit'>Save</button>
+      <button onClick={handleCancel}>Cancel</button>
     </form>
     </div>
   )

@@ -29,15 +29,14 @@ const UserLogin = (props) =>{
       setAcc(res.data)
     }
     getAll()
-    // find a different location , acc takes a bit to render, might use useEffect?
-    if(acc){
-      console.log('wtf',acc)
-      found = acc.find(e => e.email === userEmail)
-      if(found){
-        navigate(`/${accType}/${found._id}`,{state:{found}})
-      }else{
-        setErrMessage('You do not have an account.')
-      }
+  }
+  if(acc){
+    console.log('wtf',acc)
+    found = acc.find(e => e.email === userEmail)
+    if(found){
+      navigate(`/${accType}/${found._id}`,{state:{found}})
+    }else{
+      setErrMessage('You do not have an account.')
     }
   }
 

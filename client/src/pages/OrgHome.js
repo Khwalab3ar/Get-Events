@@ -14,6 +14,7 @@ const OrgHome = () => {
 
   const handleEdit = () => {
     setEditDets(true)
+    console.log(editDets)
   }
   const handleCreateEvent = () => {
     setEventDet(true)
@@ -21,8 +22,6 @@ const OrgHome = () => {
 
   const handleClick = () => {
     setEditDets(false)
-  }
-  const handleEventClick = () => {
     setEventDet(false)
   }
 
@@ -34,15 +33,15 @@ const OrgHome = () => {
     form = <Edit id={userData._id} finish={handleClick} />
   }
   if (eventDet) {
-    form = <CreateEvent id={userData._id} finish={handleEventClick} />
+    form = <CreateEvent id={userData._id} finish={handleClick} />
   }
   return (
     <div>
+      {form}
       <button onClick={handleEdit}>Edit</button>
       <button onClick={handleCreateEvent}>Create Event</button>
       <button onClick={handleLogout}>Logout</button>
       <Events id={userData._id} />
-      {form}
     </div>
   )
 }
