@@ -93,9 +93,6 @@ input{
   border: 2px solid #fff;
   padding-bottom: 5%;
 }
-.event-items:hover{
-  background-color: #228866;
-}
 .event-items > img{
   object-fit: cover;
   width:100%;

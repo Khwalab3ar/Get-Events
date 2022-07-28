@@ -7,7 +7,7 @@ import Org from './Org'
 
 
 const CreateAccount = (props) =>{
-  const[created,toggleCreated] = useState('')
+  //const[created,toggleCreated] = useState()
   const[accType,setAccType]= useState('')
   const navigate = useNavigate()
   let formType
@@ -46,19 +46,14 @@ const CreateAccount = (props) =>{
     
     const createPer = async () =>{
       const account = await axios.post(`${BASE_URL}/personal`,perJson)
-      toggleCreated(true)
+      navigate('/Success')
     }
     const createOrg = async () =>{
       const account = await axios.post(`${BASE_URL}/organization`,orgJson)
-      toggleCreated(true)
+      navigate('/Success')
     }
+
     (accType === 'personal')? createPer() : createOrg() 
-    console.log(created)
-    //Why toggleCreated aint toggling????? TT__TT
-    /*if(created){
-      navigate('/success')
-    }else{ 
-      navigate('/error')}*/
   }
 
 

@@ -14,7 +14,6 @@ const EventDetails = () => {
     const getOrgData = async () => {
       const res = await axios.get(`${BASE_URL}organization/search/${orgId}`)
       setOrg(res.data)
-      console.log(res.data)
     }
     getOrgData()
   }, [])
