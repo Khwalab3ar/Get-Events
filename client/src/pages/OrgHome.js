@@ -1,32 +1,48 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import Edit from '../components/Edit'
+import CreateEvent from '../components/CreateEvent'
+import Events from '../components/Events'
 
 const OrgHome = () => {
+  const navigate = useNavigate()
   const location = useLocation()
   const userData = location.state.found
   const [editDets, setEditDets] = useState(false)
+  const [eventDet, setEventDet] = useState(false)
   let form
 
   const handleEdit = () => {
     setEditDets(true)
   }
-  const handleCreateEvent = () => {}
+  const handleCreateEvent = () => {
+    setEventDet(true)
+  }
 
   const handleClick = () => {
-    console.log('handleClick is good')
+    setEditDets(false)
   }
-  if (editDets) {
-    form = <Edit id={userData._id} finish={handleClick} />
-  } else {
-    form = ''
+  const handleEventClick = () => {
+    setEventDet(false)
   }
 
+  const handleLogout = () => {
+    navigate('/')
+  }
+  form = ''
+  if (editDets) {
+    form = <Edit id={userData._id} finish={handleClick} />
+  }
+  if (eventDet) {
+    form = <CreateEvent id={userData._id} finish={handleEventClick} />
+  }
   return (
     <div>
-      {form}
       <button onClick={handleEdit}>Edit</button>
       <button onClick={handleCreateEvent}>Create Event</button>
+      <button onClick={handleLogout}>Logout</button>
+      <Events id={userData._id} />
+      {form}
     </div>
   )
 }

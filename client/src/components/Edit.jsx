@@ -1,7 +1,11 @@
 import axios from "axios"
+import { Navigate, useNavigate } from "react-router-dom"
 import { BASE_URL } from "../globals"
+import { useState } from "react"
 
 const Edit = (props) =>{
+  const navigate = useNavigate()
+  const [updated, toggleUpdated] = useState(false)
   const handleSubmit = (e) => {
     e.preventDefault()
     const json = {}
@@ -20,9 +24,24 @@ const Edit = (props) =>{
     console.log(json)
     const updateOrg = async () =>{
       const res = await axios.put(`${BASE_URL}organization/${props.id}`,json)
-      console.log(res)
+      toggleUpdated(true)
     }
     updateOrg()
+    if(updated){
+      props.finish()
+    }
+
+  }
+
+  const handleDelete =() =>{
+    let wantDelete  = prompt('Enter "Yes" to delete')
+    if (wantDelete === "Yes"){
+      const deleteOrg = async () =>{
+        const res = await axios.delete(`${BASE_URL}organization/${props.id}`)
+      }
+      deleteOrg()
+      navigate('/login')
+    }
   }
   return(
     <div>
@@ -35,8 +54,9 @@ const Edit = (props) =>{
       <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
       <label htmlFor='email'>Email: </label>
       <input type='email' id='email' name='email'/>
-      <button type='Submit' onClick={props.handleClick}>Save</button>
+      <button type='Submit'>Save</button>
     </form>
+    <button onClick={handleDelete}>Delete</button>
     </div>
   )
 }

@@ -11,7 +11,8 @@ const Event = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'Organization',
       required: false
-    }
+    },
+    image: { type: String, required: false }
   },
   { timeseries: true }
 )

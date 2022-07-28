@@ -3,15 +3,19 @@ import axios from 'axios'
 import { BASE_URL } from "../globals"
 
 
-const Event = () =>{
+const Event = (props) =>{
   const[events,setEvents]= useState([])
   useEffect(()=>{
     const getAllEvent = async () =>{
       const res = await axios.get(`${BASE_URL}events`) 
       setEvents(res.data)  
     }
-    getAllEvent()
-    console.log(events)
+    const searchEvent =  async () =>{
+      const res = await axios.get(`${BASE_URL}event/search`, {params:{organization:props.id}})
+      setEvents(res.data) 
+      console.log(res)
+    }
+    (props.id)? searchEvent(): getAllEvent()
   },[])
   return(
     <div className="events-grid">
