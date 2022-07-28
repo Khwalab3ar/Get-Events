@@ -1,16 +1,27 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Edit from '../components/Edit'
 import CreateEvent from '../components/CreateEvent'
 import Events from '../components/Events'
+import axios from 'axios'
+import { BASE_URL } from '../globals'
 
 const OrgHome = () => {
   const navigate = useNavigate()
   const location = useLocation()
-  const userData = location.state.found
+  const user = location.state.found
   const [editDets, setEditDets] = useState(false)
   const [eventDet, setEventDet] = useState(false)
+  const [userData, setUserData] = useState(user)
   let form
+
+  /*useEffect(() => {
+    const getOrgData = async () => {
+      const res = await axios.get(`${BASE_URL}organization/search/${user._id}`)
+      setUserData(res.data)
+    }
+    getOrgData()
+  }, [editDets])*/
 
   const handleEdit = () => {
     setEditDets(true)
@@ -19,7 +30,8 @@ const OrgHome = () => {
     setEventDet(true)
   }
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    setUserData(e.data)
     setEditDets(false)
     setEventDet(false)
   }
@@ -29,7 +41,7 @@ const OrgHome = () => {
   }
   form = ''
   if (editDets) {
-    form = <Edit id={userData._id} finish={handleClick} />
+    form = <Edit id={user._id} finish={handleClick} />
   }
   if (eventDet) {
     form = <CreateEvent orgData={userData} finish={handleClick} />
@@ -44,7 +56,7 @@ const OrgHome = () => {
       </div>
       {form}
       <h2>Company's Events</h2>
-      <Events id={userData._id} />
+      <Events id={user._id} />
       <h2>All Events</h2>
       <Events />
     </div>

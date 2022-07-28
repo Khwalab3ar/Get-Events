@@ -16,6 +16,12 @@ const CreateAccount = (props) =>{
     const a = document.querySelector('input[name="type"]:checked').value
     setAccType(a)
   }  
+
+  const handleClick = () => {
+    navigate('/login')
+  }
+
+
   const handleSubmit =(e)=>{
     let fname
     let lname

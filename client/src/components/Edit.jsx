@@ -6,6 +6,9 @@ import { useState } from "react"
 const Edit = (props) =>{
   const navigate = useNavigate()
   const [updated, toggleUpdated] = useState(false)
+  const [returnData, setReturnData] = useState()
+
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const json = {}
@@ -21,17 +24,16 @@ const Edit = (props) =>{
     if(document.querySelector('#email').value){
       json.email = document.querySelector('#email').value
     }
-    console.log(json)
     const updateOrg = async () =>{
       const res = await axios.put(`${BASE_URL}organization/${props.id}`,json)
       toggleUpdated(true)
+      setReturnData(res)
     }
     updateOrg()
-    if(updated){
-      props.finish()
-    }
-
   }
+    if(updated){
+      props.finish(returnData)
+    }
   const handleCancel = () =>{
     props.finish()
   }
