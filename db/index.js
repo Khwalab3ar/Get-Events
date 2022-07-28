@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
 
+const MONGO_URI = `mongodb+srv://khwalabear:${process.env.MONGO}@cluster0.lyvpy.mongodb.net/getEventDatabase`
+let dbUrl = MONGO_URI
 mongoose
-  .connect('mongodb://127.0.0.1:27017/getEventDatabase')
+  .connect(dbUrl)
   .then(() => {
     console.log('Successfully connected to DB')
   })

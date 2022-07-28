@@ -6,6 +6,9 @@ import { useState } from "react"
 const UserEdit = (props) =>{
   const navigate = useNavigate()
   const [updated, toggleUpdated] = useState(false)
+  const [returnData, setReturnData] = useState()
+
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const json = {}
@@ -25,13 +28,14 @@ const UserEdit = (props) =>{
     const updatePersonal = async () =>{
       const res = await axios.put(`${BASE_URL}personal/${props.id}`,json)
       toggleUpdated(true)
+      setReturnData(res)
     }
     updatePersonal()
-    if(updated){
-      props.finish()
-    }
-
   }
+
+    if(updated){
+      props.finish(returnData)
+    }
   const handleCancel = () =>{
     props.finish()
   }
@@ -39,7 +43,7 @@ const UserEdit = (props) =>{
     let wantDelete  = prompt('Enter "Yes" to delete')
     if (wantDelete === "Yes"){
       const deleteOrg = async () =>{
-        const res = await axios.delete(`${BASE_URL}organization/${props.id}`)
+        const res = await axios.delete(`${BASE_URL}persoanl/${props.id}`)
       }
       deleteOrg()
       navigate('/login')
