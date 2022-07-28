@@ -21,7 +21,8 @@ const createEvent = async (req, res) => {
 
 const searchEvents = async (req, res) => {
   try {
-    const events = await Event.find(req.body)
+    const { id } = req.params
+    const events = await Event.find({ organization: id })
     if (events) {
       return res.status(200).json(events)
     }

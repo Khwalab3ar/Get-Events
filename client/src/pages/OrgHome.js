@@ -45,6 +45,8 @@ const OrgHome = () => {
       {form}
       <h2>Company's Events</h2>
       <Events id={userData._id} />
+      <h2>All Events</h2>
+      <Events />
     </div>
   )
 }

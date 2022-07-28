@@ -31,7 +31,6 @@ const UserLogin = (props) =>{
     getAll()
   }
   if(acc){
-    console.log('wtf',acc)
     found = acc.find(e => e.email === userEmail)
     if(found){
       navigate(`/${accType}/${found._id}`,{state:{found}})

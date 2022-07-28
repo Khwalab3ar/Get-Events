@@ -10,7 +10,7 @@ const Event = new Schema(
     organization: {
       type: Schema.Types.ObjectId,
       ref: 'Organization',
-      required: false
+      required: true
     },
     image: { type: String, required: false }
   },

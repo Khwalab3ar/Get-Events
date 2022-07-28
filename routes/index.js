@@ -17,7 +17,7 @@ router.delete('/organization/:id', orgController.deleteOrg)
 //Controllers for Events
 router.get('/events', eventController.getAllEvents)
 router.post('/event', eventController.createEvent)
-router.get('/event/search', eventController.searchEvents)
+router.get('/event/search/:id', eventController.searchEvents)
 router.put('/event/:id', eventController.updateEvent)
 router.delete('/event/:id', eventController.deleteEvent)
 //Controllers for Personals

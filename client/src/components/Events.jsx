@@ -11,26 +11,28 @@ const Event = (props) =>{
       setEvents(res.data)  
     }
     const searchEvent =  async () =>{
-      const res = await axios.get(`${BASE_URL}event/search`, {params:{organization:props.id}})
+      const res = await axios.get(`${BASE_URL}event/search/${props.id}`)
       setEvents(res.data) 
       console.log(res)
     }
-    (props.id)? searchEvent(): getAllEvent()
+    console.log(props.id)
+    if(props.id === undefined){
+      getAllEvent()
+    }else{ 
+      searchEvent()}
   },[])
   return(
-  <section>
-          <h1>EVENTS</h1>
     <div className="events-grid">
       {events.map((event)=>(
         <div className='event-items' key={event._id}>
-          <img src={event.image}/>
+          <img src= {event.image}/>
           <h1>{event.name}</h1>
-          <h3>Industry: {event.industy}</h3>
+          <h3>Industry: {event.industry}</h3>
           <h3>Price: <span className="price">${event.price}</span></h3>
+          {/*<h4>org: {event.organization}</h4>*/}
       </div>
       ))}
     </div>
-    </section>
   )
 }
 
