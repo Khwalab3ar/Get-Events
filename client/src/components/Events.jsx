@@ -37,22 +37,10 @@ const Event = (props) =>{
       (confirm === "Yes")&& deleteEvent()
       setIsDelete(true)
     }
-
-if(events){form = {events.map((event)=>(
-      <div className='event-items' key={event._id}>
-        <img src= {event.image}/>
-        <h1>{event.name}</h1>
-        <h3>Industry: {event.industry}</h3>
-        <h3>Price: <span className="price">${event.price}</span></h3>
-        <button onClick={()=>handleClick(event)}>Details</button>
-        {(props.id !== undefined)&&<button onClick={()=>handleDelete(event._id)}>Delete</button>}
-    </div>
-    ))} }else {
-      form =''
-    }
+    
   return(
     <div className="events-grid">
-      {/* {events.map((event)=>(
+      {events.map((event)=>(
         <div className='event-items' key={event._id}>
           <img src= {event.image}/>
           <h1>{event.name}</h1>
@@ -61,8 +49,7 @@ if(events){form = {events.map((event)=>(
           <button onClick={()=>handleClick(event)}>Details</button>
           {(props.id !== undefined)&&<button onClick={()=>handleDelete(event._id)}>Delete</button>}
       </div>
-      ))} */}
-      {form}
+      ))}
     </div>
   )
 }
