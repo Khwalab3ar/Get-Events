@@ -48,19 +48,19 @@
 
 ### Home Page
 
-[!Home](/IMAGE/Home.png)
+![Image](/IMAGE/Home.png)
 
 ### Org Home Page
 
-[!Organization Home](/IMAGE/Org-Home.png)
+![Image](/IMAGE/Org-Home.png)
 
 ### Event Details
 
-[!Event Details](/IMAGE/Event-Details.png)
+![Image](/IMAGE/Event-Details.png)
 
 ### Create Account
 
-[!Create Account](/IMAGE/Create-Org.png)
+![Image](/IMAGE/Create-Org.png)
 
 ---
 
