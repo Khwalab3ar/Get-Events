@@ -23,7 +23,11 @@ const EventDetails = () => {
 
   return (
     <div className="event-details">
-      <img className="detail-image" src={eventData.image}></img>
+      <img
+        className="detail-image"
+        src={eventData.image}
+        alt="event image"
+      ></img>
       <h1>{eventData.name}</h1>
       <h3>Event by: {org.name}</h3>
       <h3>Questions or Concerns :</h3>
