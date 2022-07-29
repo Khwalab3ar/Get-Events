@@ -54,10 +54,6 @@
 
 ![Image](/IMAGE/Home.png)
 
-### Org Home Page
-
-![Image](/IMAGE/Org-Home.png)
-
 ### Event Details
 
 ![Image](/IMAGE/Event-Details.png)
