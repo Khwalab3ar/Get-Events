@@ -8,7 +8,6 @@ const navigate = useNavigate()
 const [created, toggleCreated] = useState(false)
 
   const handleSubmit = (e) =>{
-    console.log('data', props.orgData)
     e.preventDefault()
     const name = document.querySelector('#eventName').value
     const  type= document.querySelector('#type').value
@@ -25,15 +24,14 @@ const [created, toggleCreated] = useState(false)
       image: image
     }
 
-    console.log(json)
+
     const createEvent = async ()=>{
       const res  = await axios.post(`${BASE_URL}/event`, json)
       toggleCreated(true)
-      console.log(created)
     }
     createEvent()
-    if(created){ props.finish()}
-    }
+  }
+  if(created){ props.finish()}
 
     const handleCancel = () =>{
       props.finish()

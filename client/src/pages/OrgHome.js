@@ -30,16 +30,17 @@ const OrgHome = () => {
     setEventDet(true)
   }
 
-  const handleClick = (e) => {
-    setUserData(e.data)
+  const handleClick = () => {
     setEditDets(false)
     setEventDet(false)
+    window.location.reload(true)
+    form = ''
   }
 
   const handleLogout = () => {
     navigate('/')
   }
-  form = ''
+  //form = ''
   if (editDets) {
     form = <Edit id={user._id} finish={handleClick} />
   }
