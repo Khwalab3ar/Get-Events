@@ -4,11 +4,8 @@
 }
 body{
   background-color: #243080;
-  margin-top: 7%;
 }
 header{
-  position:fixed;
-  top:0;
   background-color: #216362;
   height: 7%;
   width:100%;
@@ -28,7 +25,7 @@ ul{
 }
 li{
   list-style-type: none;
-  padding: 2% 3% 1.75% 3%;
+  padding: 2% 3%;
   font-size: 1.25em;
 }
 li:last-of-type{
@@ -81,6 +78,15 @@ input{
 .about > p{
   margin-top:2%;
 }
+ul > li:first-of-type{
+  font-weight: 700;
+  font-size:2em;
+  padding-top: 1%;
+  margin-right: 40%;
+}
+ul > li:first-of-type{
+  background-color: transparent;
+}
 .App {
   text-align: center;
 }
@@ -124,9 +130,7 @@ input{
   object-fit: cover;
   border-bottom: 3px solid #fff;
 }
-.event-details{
-  margin-top: -2%;
-}
+
 .event-details > h1{
   margin:1% 0 2% 0;
   padding-bottom: 2%;
@@ -138,15 +142,4 @@ input{
 
 .event-details > button {
   margin-top:2%;
-}
-
-ul > li:first-of-type{
-  position: fixed;
-  left: 2%;
-  font-weight: 700;
-  font-size:2em;
-  padding-top: 1%;
-}
-ul > li:first-of-type{
-  background-color: transparent;
 }
