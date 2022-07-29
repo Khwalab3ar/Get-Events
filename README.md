@@ -30,7 +30,7 @@
 
 ## _Entitiy Relationship Diagram_
 
-### ![Image](/IMAGE/get_events_erd.png)
+### ![Image](/IMAGE/ERD.png)
 
 ---
 
@@ -48,19 +48,19 @@
 
 ### Home Page
 
-[!Home](IMAGE/Home.png)
+[!Home](/IMAGE/Home.png)
 
 ### Org Home Page
 
-[!Organization Home](IMAGE/Org-Home.png)
+[!Organization Home](/IMAGE/Org-Home.png)
 
 ### Event Details
 
-[!Event Details](IMAGE/Event-Details.png)
+[!Event Details](/IMAGE/Event-Details.png)
 
 ### Create Account
 
-[!Create Account](IMAGE/Create-Org.png)
+[!Create Account](/IMAGE/Create-Org.png)
 
 ---
 
