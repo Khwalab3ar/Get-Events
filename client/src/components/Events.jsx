@@ -1,14 +1,13 @@
 import { useState,useEffect } from "react"
 import axios from 'axios'
 import { BASE_URL } from "../globals"
-import {useNavigate} from "react-router-dom"
+import {useNavigate,useParams} from "react-router-dom"
 
 
 const Event = (props) =>{
   const navigate = useNavigate()
   const[events,setEvents]= useState([])
   const[isDelete, setIsDelete] = useState(false)
-  let form
   useEffect(()=>{
     const getAllEvent = async () =>{
       const res = await axios.get(`${BASE_URL}events`) 
@@ -37,7 +36,7 @@ const Event = (props) =>{
       (confirm === "Yes")&& deleteEvent()
       setIsDelete(true)
     }
-    
+    console.log(events)
   return(
     <div className="events-grid">
       {events.map((event)=>(

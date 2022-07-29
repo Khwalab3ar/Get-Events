@@ -103,6 +103,7 @@ ul > li:first-of-type{
 .event-items{
   border: 2px solid #fff;
   padding-bottom: 5%;
+  height: 100vh;
 }
 .event-items > img{
   object-fit: cover;
