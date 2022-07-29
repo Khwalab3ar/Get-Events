@@ -42,6 +42,7 @@ const Event = (props) =>{
         <div className='event-items' key={event._id}>
           <img src= {event.image}/>
           <h1>{event.name}</h1>
+          <h3>{event.date}</h3>
           <h3>Industry: {event.industry}</h3>
           <h3>Price: <span className="price">${event.price}</span></h3>
           <button onClick={()=>handleClick(event)}>Details</button>
