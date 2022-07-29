@@ -45,7 +45,7 @@ const Event = (props) =>{
           <h3>Industry: {event.industry}</h3>
           <h3>Price: <span className="price">${event.price}</span></h3>
           <button onClick={()=>handleClick(event)}>Details</button>
-          {(props.id != undefined)&&<button onClick={()=>handleDelete(event._id)}>Delete</button>}
+          {(props.id !== undefined)&&<button onClick={()=>handleDelete(event._id)}>Delete</button>}
       </div>
       ))}
     </div>
