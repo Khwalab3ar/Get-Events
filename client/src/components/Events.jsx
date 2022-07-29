@@ -36,7 +36,6 @@ const Event = (props) =>{
       (confirm === "Yes")&& deleteEvent()
       setIsDelete(true)
     }
-    console.log(events)
   return(
     <div className="events-grid">
       {events.map((event)=>(
