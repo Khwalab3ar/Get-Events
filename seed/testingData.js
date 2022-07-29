@@ -4,8 +4,9 @@ const { Event, Personal, Organization } = require('../models/index')
 db.on('error', console.error.bind(console, 'MongoDB connection error : '))
 
 const main = async () => {
+  /*
   const events = [
-    /*{
+    {
       name: 'Halloween Run',
       industry: 'Fitness',
       type: 'public',
@@ -14,7 +15,7 @@ const main = async () => {
       image:
         'https://2.bp.blogspot.com/-3JHP11JWt9U/WB48_e-zCgI/AAAAAAAAcgg/0-99Z83ws3kOkn75fp9Ct5BTe57Qo28GgCLcB/s1600/0-Halloween%2Bpumpkins%2B2009%2B.jpg',
       organization: '62e1f4e4202550c04df95079'
-    } ,*/
+    } ,
     {
       name: 'Run for Days',
       industry: 'Medical',
@@ -114,8 +115,8 @@ const main = async () => {
     }
   ]
   await Event.insertMany(events)
-  console.log('Events created')
-  /*const org = [
+  console.log('Events created')*/
+  const org = [
     {
       name: 'Terror Finder',
       industry: 'Entertainment',
@@ -230,7 +231,7 @@ const main = async () => {
     }
   ]
   await Personal.insertMany(person)
-  console.log('Personals created')*/
+  console.log('Personals created')
 }
 
 const run = async () => {
