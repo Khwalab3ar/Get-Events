@@ -51,11 +51,11 @@ const CreateAccount = (props) =>{
     }
     
     const createPer = async () =>{
-      const account = await axios.post(`${BASE_URL}/personal`,perJson)
+      const account = await axios.post(`${BASE_URL}personal`,perJson)
       navigate('/Success')
     }
     const createOrg = async () =>{
-      const account = await axios.post(`${BASE_URL}/organization`,orgJson)
+      const account = await axios.post(`${BASE_URL}organization`,orgJson)
       navigate('/Success')
     }
 
