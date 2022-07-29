@@ -8,7 +8,9 @@
 
 ---
 
-### _Game Link_
+### _App Link_
+
+[Get Events](https://g3tevents.herokuapp.com/)
 
 ### _Description_
 
@@ -25,6 +27,8 @@
 - HTML
 - CSS
 - JS / MERN
+- MONGODB
+- Heroku
 
 ---
 
@@ -66,7 +70,9 @@
 
 ## _Future Updates_
 
-- [x] None yet
+- [ ] User Authentication
+- [ ] Add sign up button to sign up for events
+- [ ] Automatically delete events after date of event
 
 ---
 
@@ -77,5 +83,7 @@
 ### [W3Schools](https://www.w3schools.com/default.asp)
 
 ### [Stack OverFlow](https://stackoverflow.com/)
+
+### [Duck Duck Go](https://duckduckgo.com/?va=b&t=hc)
 
 ---
