@@ -26,13 +26,13 @@ const [created, toggleCreated] = useState(false)
 
 
     const createEvent = async ()=>{
-      const res  = await axios.post(`${BASE_URL}/event`, json)
+      const res  = await axios.post(`${BASE_URL}event`, json)
       toggleCreated(true)
     }
     createEvent()
   }
   if(created){ props.finish()}
-
+  
     const handleCancel = () =>{
       props.finish()
     }
@@ -46,7 +46,7 @@ const [created, toggleCreated] = useState(false)
       <label htmlFor='price'>Price: </label>
       <input type='number' id='price' name='price'/>
       <label htmlFor='date'>Date: </label>
-      <input type='text' id='date' name='date'/>
+      <input type='date' id='date' name='date'/>
       <label htmlFor='image'>Image Url: </label>
       <input type='text' id='image' name='image'/>
       <button type='Submit'>Save</button>
