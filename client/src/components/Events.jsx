@@ -22,6 +22,7 @@ const Event = (props) =>{
     }else{ 
       searchEvent()
     }
+    setIsDelete(false)
   },[isDelete])
 
     const handleClick=(event)=>{

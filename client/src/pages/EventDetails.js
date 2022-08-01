@@ -29,6 +29,7 @@ const EventDetails = () => {
         alt="event image"
       ></img>
       <h1>{eventData.name}</h1>
+      <h4>Date : {org.date}</h4>
       <h3>Event by: {org.name}</h3>
       <h3>Questions or Concerns :</h3>
       <p> Email: {org.email}</p>

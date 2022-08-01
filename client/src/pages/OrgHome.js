@@ -15,13 +15,13 @@ const OrgHome = () => {
   const [userData, setUserData] = useState(user)
   let form
 
-  /*useEffect(() => {
+  useEffect(() => {
     const getOrgData = async () => {
       const res = await axios.get(`${BASE_URL}organization/search/${user._id}`)
       setUserData(res.data)
     }
     getOrgData()
-  }, [editDets])*/
+  }, [editDets])
 
   const handleEdit = () => {
     setEditDets(true)
